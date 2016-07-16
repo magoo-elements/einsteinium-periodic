@@ -1,0 +1,78 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`einsteinium-element`
+A polymer widget for displaying an atomic number with styling based on the elements
+state at 0 degrees C and 1 atmosphere
+
+-->
+
+<dom-module id="einsteinium-atomic-number">
+	<template strip-whitespace>
+		<style>
+		  :host {
+			display: block;
+		  }
+		  
+		  .atomic-number {
+			color: var(--einsteinium-periodic-element-atomic-number-default-color, gray )
+		  }
+		  
+		  .atomic-number-gas {
+			color: var(--einsteinium-periodic-element-atomic-number-gas-color, red);
+		  }
+		  
+		  .atomic-number-liquid {
+			color: var(--einsteinium-periodic-element-atomic-number-gas-color, green);
+		  }
+		  
+		  .atomic-number-solid {
+			color: var(--einsteinium-periodic-element-atomic-number-gas-color, black);
+		  }
+		</style>
+	
+		<template is="dom-if" if="{{_isUnknown(state)}}">
+			<div class="atomic-number">[[atomicNumber]]</div>
+		</template>
+
+		<template is="dom-if" if="{{_isSolid(state)}}">
+			<div class="atomic-number atomic-number-solid">[[atomicNumber]]</div>
+		</template>
+
+		<template is="dom-if" if="{{_isLiquid(state)}}">
+			<div class="atomic-number atomic-number-liquid">[[atomicNumber]]</div>
+		</template>
+
+		<template is="dom-if" if="{{_isGas(state)}}">
+			<div class="atomic-number atomic-number-gas">[[atomicNumber]]</div>
+		</template>
+
+	</template>
+
+	<script>
+		Polymer({
+
+		  is: 'einsteinium-atomic-number',
+
+		  properties: {
+			atomicNumber: {
+				type: Number,
+				value: 100
+			},
+			state: {
+				type: String,
+				value: "unknown",
+			},
+		  },
+
+		  _isUnknown: function (state) { return state === "unknown";},
+		  
+		  _isSolid: function (state) { return state === "solid";},
+
+		  _isLiquid: function (state) { return state === "liquid";},
+
+		  _isGas: function (state) { return state === "gas";},
+		  
+		});
+	</script>
+</dom-module>

@@ -1,4 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="einsteinium-element.html">
 
 <!--
 `einsteinium-periodic`
@@ -8,13 +9,20 @@ A polymer widget for displaying the periodic table
 -->
 
 <dom-module id="einsteinium-periodic">
-  <template>
+  <template strip-whitespace>
     <style>
       :host {
         display: block;
       }
+	  
+	  .title {
+		color: var(--einsteinium-periodic-color, green)
+	  }
     </style>
-    <h2>Hello [[prop1]]</h2>
+    <h2 class="title">Hello [[prop1]]</h2>
+	
+	<einsteinium-element name="Magooium"></einsteinium-element>
+	
   </template>
 
   <script>

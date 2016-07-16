@@ -1,0 +1,132 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`einsteinium-element`
+A polymer widget for displaying a single element from the periodic table
+
+-->
+
+<dom-module id="einsteinium-element">
+	<template strip-whitespace>
+		<style>
+		  :host {
+			display: block;
+		  }
+		  
+		  .element-box {
+			background-color: var(--einsteinium-periodic-element-default-background-color, Transparent);
+		  }
+
+		  .element-box-alkali-metal{
+			background-color: var(--einsteinium-periodic-element-alkali-metal-background-color, Crimson);
+		  }
+		  
+		  .element-box-alkaline-earth-metal{
+			background-color: var(--einsteinium-periodic-element-alkaline-earth-metal-background-color, SanyBrown);
+		  }
+		  
+		  .element-box-transition-metal{
+			background-color: var(--einsteinium-periodic-element-transition-metal-background-color, LightSalmon);
+		  }
+		  
+		  .element-box-post-transition-metal{
+			background-color: var(--einsteinium-periodic-element-post-transition-metal-background-color, DarkGray);
+		  }
+		  
+		  .element-box-metalloid-metal{
+			background-color: var(--einsteinium-periodic-element-metalloid-background-color, DarkKhaki);
+		  }
+		  
+		  .element-box-polyatomic-nonmetal{
+			background-color: var(--einsteinium-periodic-element-polyatomic-nonmetal-background-color, MediumAquamarine);
+		  }
+		  
+		  .element-box-diatomic-nonmetal{
+			background-color: var(--einsteinium-periodic-element-diatomic-nonmetal-background-color, GreenYellow);
+		  }
+		  
+		  .element-box-noble-gasses{
+			background-color: var(--einsteinium-periodic-element-noble-gasses-background-color, Grey);
+		  }
+
+		  .element-box-lanthanide{
+			background-color: var(--einsteinium-periodic-element-lanthanide-background-color, Violet);
+		  }
+
+		  .element-box-actinide{
+			background-color: var(--einsteinium-periodic-element-actinide-background-color, Orchid);
+		  }
+		  
+		  .element-name {
+			color: var(--einsteinium-periodic-element-name-default-color, black);
+		  }
+		  
+		  .element-symbol {
+			color: var(--einsteinium-periodic-element-symbol-default-color, black);
+		  }
+		  
+		  .atomic-number {
+			color: var(--einsteinium-periodic-element-atomic-number-default-color, Gray )
+		  }
+		  
+		  .atomic-number-gas {
+			color: var(--einsteinium-periodic-element-atomic-number-gas-color, Red);
+		  }
+		  
+		  .atomic-number-liquid {
+			color: var(--einsteinium-periodic-element-atomic-number-gas-color, Green);
+		  }
+		  
+		  .atomic-number-solid {
+			color: var(--einsteinium-periodic-element-atomic-number-gas-color, Black);
+		  }		  
+		</style>
+	
+	
+		<div class$="element-box element-box-{{series}}">
+			<h2 class="element-name">[[name]]</h2>
+			<div class="element-symbol">[[symbol]]</div>
+
+			<div class$="atomic-number atomic-number-{{state}}">[[atomic-number]]<div>
+		</div>
+	</template>
+
+	<script>
+		Polymer({
+
+		  is: 'einsteinium-element',
+
+		  properties: {
+			name: {
+			  type: String
+			},
+			symbol: {
+				type: String
+			},
+			series: {
+				type: String,
+				value: "unknown",
+			},
+			atomicNumber: {
+				type: Number
+			},
+			state: {
+				type: String,
+				value: "unknown",
+			},
+			occurence: {
+				type: String
+			}
+		  },
+
+		  _isUnknown: function (state) { return state === "unknown";},
+		  
+		  _isSolid: function (state) { return state === "solid";},
+
+		  _isLiquid: function (state) { return state === "liquid";},
+
+		  _isGas: function (state) { return state === "gas";},
+		  
+		});
+	</script>
+</dom-module>

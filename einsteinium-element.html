@@ -15,6 +15,8 @@ A polymer widget for displaying a single element from the periodic table
 		  
 		  .element-box {
 			background-color: var(--einsteinium-periodic-element-default-background-color, Transparent);
+			width: 20vw;
+			height: 20vw;
 		  }
 
 		  .element-box-alkali-metal{
@@ -118,14 +120,6 @@ A polymer widget for displaying a single element from the periodic table
 				type: String
 			}
 		  },
-
-		  _isUnknown: function (state) { return state === "unknown";},
-		  
-		  _isSolid: function (state) { return state === "solid";},
-
-		  _isLiquid: function (state) { return state === "liquid";},
-
-		  _isGas: function (state) { return state === "gas";},
 		  
 		});
 	</script>

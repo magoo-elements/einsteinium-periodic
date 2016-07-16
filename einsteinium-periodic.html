@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`einsteinium-periodic`
+A polymer widget for displaying the periodic table
+
+@demo demo/index.html 
+-->
+
+<dom-module id="einsteinium-periodic">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'einsteinium-periodic',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'einsteinium-periodic',
+        },
+      },
+
+    });
+  </script>
+</dom-module>

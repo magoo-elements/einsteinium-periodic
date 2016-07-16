@@ -1,4 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
 
 <!--
 `einsteinium-element`
@@ -10,16 +11,15 @@ A polymer widget for displaying a single element from the periodic table
 	<template strip-whitespace>
 		<style>
 		  :host {
-			display: block;
+			display: inline-block;
+			width: var(--einsteinium-periodic-element-width, 5%);
+			height: var(--einsteinium-periodic-element-height, 10%);
 		  }
 		  
 		  .element-box {
+			@apply(--layout-vertical)
 			background-color: var(--einsteinium-periodic-element-default-background-color, Transparent);
-			display: inline-block;
-			clear: both;
 			padding: 2%;
-			width: var(--einsteinium-periodic-element-width, 5%);
-			height: var(--einsteinium-periodic-element-height, 5%);
 			overflow: auto;
 		  }
 
@@ -39,7 +39,7 @@ A polymer widget for displaying a single element from the periodic table
 			background-color: var(--einsteinium-periodic-element-post-transition-metal-background-color, DarkGray);
 		  }
 		  
-		  .element-box-metalloid-metal{
+		  .element-box-metalloid{
 			background-color: var(--einsteinium-periodic-element-metalloid-background-color, DarkKhaki);
 		  }
 		  

@@ -18,9 +18,17 @@
 	
 		.large-element {
 			--einsteinium-periodic-element-height: 100px;
-			--einsteinium-periodic-element-width: 100px%
+			--einsteinium-periodic-element-width: 100px;
 		}
 	
+		.table-element {
+			--einsteinium-periodic-element-height: 100%;
+			--einsteinium-periodic-element-width: 25%
+		}
+		
+		.element-row {
+			@apply(--layout-horizontal)
+		}
 	</style>
 	
   </head>
@@ -30,5 +38,13 @@
 
 	<einsteinium-element class="large-element" name="Einsteinium" atomic-number=99 symbol="Es" state="gas" occurance="synthetic" series="actinide"></einsteinium-element>
 
+	<h3>Render multiple elements</h3>
+	<div style="width: 50%" class="element-row">
+		<einsteinium-element class="table-element" name="Zinc" atomic-number=30 symbol="Zn" state="solid" occurance="primordial" series="transition-metal"></einsteinium-element>
+		<einsteinium-element class="table-element" name="Gallium" atomic-number=31 symbol="Ga" state="solid" occurance="primordial" series="post-transition-metal"></einsteinium-element>
+		<einsteinium-element class="table-element" name="Germanium" atomic-number=32 symbol="Ge" state="solid" occurance="primordial" series="metalloid"></einsteinium-element>	
+		<einsteinium-element class="table-element" name="Arsenic" atomic-number=33 symbol="As" state="solid" occurance="primordial" series="metalloid"></einsteinium-element>	
+	</div>
+	
   </body>
 </html>

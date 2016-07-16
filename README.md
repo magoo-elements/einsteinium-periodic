@@ -35,6 +35,8 @@ The following custom properties and mixins are available for styling:
 | `--einsteinium-periodic-element-primordial-border` | Border style for elements with primordial occurrence |  |
 | `--einsteinium-periodic-element-synthetic-border` | Border style for elements with synthetic occurrence |  |
 | `--einsteinium-periodic-element-from-decay-border` | Border style for elements with occurring as a result of decay |  |
+|`--einsteinium-periodic-element-height` | The height of a single element | 10% of the container |
+|`--einsteinium-periodic-element-width` | The width of a single element | 5% of the container |
 
 
 

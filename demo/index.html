@@ -15,7 +15,12 @@
     </style>
 	
 	<style is="custom-style">
-
+	
+		.large-element {
+			--einsteinium-periodic-element-height: 100px;
+			--einsteinium-periodic-element-width: 100px%
+		}
+	
 	</style>
 	
   </head>
@@ -23,7 +28,7 @@
 
 	<h3>Render a single element</h3>
 
-	<einsteinium-element name="Einsteinium" atomic-number=99 symbol="Es" state="gas" occurance="synthetic" series="actinide"></einsteinium-element>
+	<einsteinium-element class="large-element" name="Einsteinium" atomic-number=99 symbol="Es" state="gas" occurance="synthetic" series="actinide"></einsteinium-element>
 
   </body>
 </html>

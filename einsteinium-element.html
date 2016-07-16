@@ -15,8 +15,12 @@ A polymer widget for displaying a single element from the periodic table
 		  
 		  .element-box {
 			background-color: var(--einsteinium-periodic-element-default-background-color, Transparent);
-			width: 20vw;
-			height: 20vw;
+			display: inline-block;
+			clear: both;
+			padding: 2%;
+			width: var(--einsteinium-periodic-element-width, 5%);
+			height: var(--einsteinium-periodic-element-height, 5%);
+			overflow: auto;
 		  }
 
 		  .element-box-alkali-metal{
@@ -60,8 +64,13 @@ A polymer widget for displaying a single element from the periodic table
 		  }
 		  
 		  .element-name {
+			font-size: Large;
+			font-weight: Bold;
+			margin-top: 0px;
 			color: var(--einsteinium-periodic-element-name-default-color, black);
+			margin-bottom: 10px;
 		  }
+		  
 		  
 		  .element-symbol {
 			color: var(--einsteinium-periodic-element-symbol-default-color, black);
@@ -86,7 +95,7 @@ A polymer widget for displaying a single element from the periodic table
 	
 	
 		<div class$="element-box element-box-{{series}}">
-			<h2 class="element-name">[[name]]</h2>
+			<div class="element-name">[[name]]</div>
 			<div class="element-symbol">[[symbol]]</div>
 
 			<div class$="atomic-number atomic-number-{{state}}">[[atomic-number]]<div>
